@@ -1,0 +1,98 @@
+<html>
+
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <header class="py-2">
+        <div class="title d-flex justify-content-center align-items-center py-4">
+            <h1><span>C</span><span>R</span><span class="special">U</span><span>D</span></h1>
+        </div>
+    </header>
+
+    <div class="header-2">Products Store</div>
+
+    <section class="py-5">
+        <div class="crud-system mx-auto shadow rounded my-3 p-4">
+            <div class="mb-3">
+                <label for="productName">Product Name <span class="text-danger" >*</span></label>
+                <input type="text" class="form-control" id="productName">
+                <div class="alert alert-danger d-none" id="PNameAlert">
+                    Product Name must start with capital letter and contains minimum 3 letters
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="productCategory">Product Category <span class="text-danger" >*</span></label>
+                <input type="text" class="form-control" id="productCategory">
+
+                <div class="alert alert-danger d-none" id="PCategoryAlert">
+                    Product Category must contain minimum 5 letters
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="productPrice">Product Price <span class="text-danger" >*</span></label>
+                <input type="number" class="form-control" id="productPrice">
+
+                <div class="alert alert-danger d-none" id="PPriceAlert">
+                    Product Price must be in range 100 : 10,000 (Numbers Only)
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="productDesc">Product Description <span class="text-danger" >*</span></label>
+                <textarea type="text" class="form-control" id="productDesc"></textarea>
+
+                <div class="alert alert-danger d-none" id="PDescriptionAlert">
+                    Product Description must contain minimum 3 letters, Can't contain special characters
+                </div>
+            </div>
+
+
+            <div class="Submitbtn text-center">
+                <button class="btn my-btn "  id="add-update">Add Product</button>
+            </div>
+            
+        </div>
+    </section>
+
+
+    <section>
+        <div class="crud-table mx-auto shadow rounded my-3 p-4">
+
+            <input type="text" onkeyup="search(this.value)" placeholder="&#xf002; &nbsp; Search product....." 
+            class="form-control w-75 m-auto" style="font-family: FontAwesome"  >
+
+            <div class="table-responsive">
+                <table class="table table-hover w-100 mt-5">
+                    <thead class="table-head">
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Description</th>
+                        <th></th>
+                        <th></th>
+                    </thead>
+                    <tbody id="tableBody">
+                    
+                    </tbody>
+                </table>
+            </div>
+            
+        </div>
+    </section>
+    
+
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
